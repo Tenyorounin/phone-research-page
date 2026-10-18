@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-10-17",
+  "status": "identity_only_preview",
+  "devices": [
+    {
+      "id": "google-pixel-9-pro",
+      "name": "Google Pixel 9 Pro"
+    },
+    {
+      "id": "google-pixel-9-pro-xl",
+      "name": "Google Pixel 9 Pro XL"
+    },
+    {
+      "id": "samsung-galaxy-s25-ultra",
+      "name": "Samsung Galaxy S25 Ultra"
+    }
+  ]
+}
