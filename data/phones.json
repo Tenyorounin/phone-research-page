@@ -1,28 +1,13 @@
 {
-  "as_of": "2026-10-18",
+  "as_of": "2026-10-19",
   "status": "verified_results_only",
   "devices": [
     {
-      "id": "google-pixel-9-pro",
-      "name": "Google Pixel 9 Pro",
-      "eligibility": "pending",
-      "coverage_weight": 0,
-      "overall_score": null,
-      "lowest_observed_landed_cad": null,
-      "criteria": {}
-    },
-    {
-      "id": "google-pixel-9-pro-xl",
-      "name": "Google Pixel 9 Pro XL",
-      "eligibility": "pending",
-      "coverage_weight": 0,
-      "overall_score": null,
-      "lowest_observed_landed_cad": null,
-      "criteria": {}
-    },
-    {
-      "id": "samsung-galaxy-s25-ultra",
-      "name": "Samsung Galaxy S25 Ultra",
+      "id": "google-pixel-11-pro-xl",
+      "name": "Google Pixel 11 Pro XL",
+      "released_at": "2026-09-01",
+      "catalog_status": "released",
+      "variant": "unspecified",
       "eligibility": "pending",
       "coverage_weight": 0,
       "overall_score": null,
