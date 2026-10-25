@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Administration | Phone Research</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#172337;background:#f6f8fb}
+*{box-sizing:border-box}
+body{margin:0}
+header{background:#14253e;color:white;padding:26px max(22px,calc((100vw - 1050px)/2))}
+header h1{margin:0 0 5px;font-size:1.8rem}
+header p{margin:0;color:#c9d5e5}
+main{max-width:1050px;margin:28px auto;padding:0 20px}
+nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+a{color:#1756ad}
+.button{display:inline-block;border:1px solid #1756ad;background:#1756ad;color:white;text-decoration:none;border-radius:8px;padding:10px 14px}
+.secondary{background:white;color:#1756ad}
+.notice{background:#fff8e6;border:1px solid #eed7a4;border-radius:10px;padding:14px 16px;line-height:1.55;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:15px}
+section{background:white;border:1px solid #dce3ec;border-radius:12px;padding:18px}
+h2{font-size:1.15rem;margin:0 0 8px}
+p{line-height:1.5}
+.muted{color:#5c6c80;font-size:.92rem}
+ul{padding-left:20px;margin-bottom:0}
+li{margin:10px 0;line-height:1.4}
+footer{margin:32px 0;color:#62738a;font-size:.88rem}
+code{background:#eef2f7;padding:2px 4px;border-radius:4px}
+@media(max-width:560px){nav a{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+<h1>Research administration</h1>
+<p>Private project controls, source health and run reports</p>
+</header>
+<main>
+<nav aria-label="Page navigation">
+<a class="button secondary" href="./index.html">Public dashboard</a>
+<a class="button" href="https://github.com/Tenyorounin/phone-research/actions/workflows/monday-research.yml">Research runs and logs</a>
+</nav>
+<div class="notice"><strong>Private project access:</strong> This page contains links only. Phone records, publisher settings and run reports stay in the private <code>phone-research</code> repository. Sign in to GitHub with an account that has repository access before opening or editing them.</div>
+<div class="grid">
+<section>
+<h2>Phone catalog</h2>
+<p class="muted">The active device list is the source of truth for phone names and release dates used by the research schedule.</p>
+<ul>
+<li><a href="https://github.com/Tenyorounin/phone-research/edit/main/data/devices.jsonl">Edit active phones and release dates</a></li>
+<li><a href="https://github.com/Tenyorounin/phone-research/blob/main/data/devices_archive.jsonl">View archived phones</a></li>
+<li><a href="https://github.com/Tenyorounin/phone-research/blob/main/data/review_tracker.json">View milestone schedule and completion dates</a></li>
+</ul>
+</section>
+<section>
+<h2>Review publishers and methods</h2>
+<p class="muted">Production review search reads <code>config/site_access.json</code> for enabled publishers, preferred methods, endpoints and configured backups.</p>
+<ul>
+<li><a href="https://github.com/Tenyorounin/phone-research/edit/main/config/site_access.json">Edit publishers and search methods</a></li>
+<li><a href="https://github.com/Tenyorounin/phone-research/blob/main/data/review_search_state.json">View latest per-publisher search state</a></li>
+<li><a href="https://github.com/Tenyorounin/phone-research/blob/main/data/review_candidates.jsonl">View discovered review candidates</a></li>
+</ul>
+<p class="muted">A configured method is not proof that it worked. Check the run report for each method’s result.</p>
+</section>
+<section>
+<h2>Phone discovery</h2>
+<p class="muted">Manage the feeds used to discover possible phone releases.</p>
+<ul>
+<li><a href="https://github.com/Tenyorounin/phone-research/edit/main/config/release_feeds.json">Edit release discovery feeds</a></li>
+<li><a href="https://github.com/Tenyorounin/phone-research/blob/main/.github/workflows/monday-research.yml">View the scheduled research workflow</a></li>
+</ul>
+</section>
+<section>
+<h2>Evaluation settings and evidence</h2>
+<p class="muted">These files control the existing evaluation and its source observations.</p>
+<ul>
+<li><a href="https://github.com/Tenyorounin/phone-research/edit/main/config/criteria.json">Edit evaluation criteria</a></li>
+<li><a href="https://github.com/Tenyorounin/phone-research/edit/main/config/benchmarks.json">Edit benchmarks</a></li>
+<li><a href="https://github.com/Tenyorounin/phone-research/edit/main/data/observations.jsonl">Edit evidence observations</a></li>
+<li><a href="https://github.com/Tenyorounin/phone-research/edit/main/data/prices.jsonl">Edit price records</a></li>
+</ul>
+</section>
+<section>
+<h2>Last run, errors and logs</h2>
+<p class="muted">Open the research workflow to see the newest run, its job logs, and per-source outcomes.</p>
+<ul>
+<li><a href="https://github.com/Tenyorounin/phone-research/actions/workflows/monday-research.yml">Open Monday research run history</a></li>
+<li>Open the latest run’s <strong>monday-review-search-report</strong> artifact for the report and publisher diagnostics.</li>
+<li>Artifacts are retained for 90 days.</li>
+</ul>
+</section>
+<section>
+<h2>Important workflow behavior</h2>
+<p class="muted">Changes to <code>config/site_access.json</code> or <code>config/release_feeds.json</code> on the main branch automatically start the Monday research workflow. Make related edits together in one GitHub commit to avoid unnecessary runs.</p>
+<p class="muted"><a href="https://github.com/Tenyorounin/phone-research/actions">Open all workflows and audits</a> · <a href="https://github.com/Tenyorounin/phone-research/actions/workflows/public-export.yml">Publish the public dashboard export</a> · <a href="https://github.com/Tenyorounin/phone-research">Browse private source repository</a>.</p>
+</section>
+</div>
+<footer><a href="./index.html">Return to the public phone comparison</a></footer>
+</main>
+</body>
+</html>
